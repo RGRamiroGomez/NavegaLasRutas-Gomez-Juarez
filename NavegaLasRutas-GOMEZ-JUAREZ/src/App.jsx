@@ -17,7 +17,7 @@ function App() {
           <Route path="/carrito" element={<CartWidget/>} />
           <Route path='/categorias/:categoria' element={<ItemConteiner/>}/>
           <Route path='/productos/:id' element={<ItemDetail/>}></Route>
-          <Route path='/404' element={<NotFound/>}></Route>
+          <Route path='*' element={<NotFound/>}></Route>
         </Routes>
     </BrowserRouter>
     </>
