@@ -9,7 +9,7 @@ export const ItemCard = ({producto}) => {
             <p>Precio: {producto.precio}</p>
             <p>Categoria: {producto.categoria}</p>
             <ItemCount></ItemCount>
-            <Link to={`/productos/${producto.id}`}>Ver Detalle</Link>
+            <Link to={`/productos/${producto.id}`} style={{textDecoration:'none'}}>Ver Detalle</Link>
         </div>
         
     )

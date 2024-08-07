@@ -27,8 +27,8 @@ export const ItemDetail = () => {
             <p>{item.precio}</p>
             <p>{item.categoria}</p>
             <ItemCount/>
-            <Link to={`/productos/${item.id - 1}`}>Ver Anterios</Link>
-            <Link to={`/productos/${item.id + 1}`}>Ver Siguiente</Link>
+            <Link to={`/productos/${item.id - 1}`} style={{textDecoration:'none'}}>Ver Anterios</Link>
+            <Link to={`/productos/${item.id + 1}`} style={{textDecoration:'none'}}>Ver Siguiente</Link>
         </div>
     )
 }
