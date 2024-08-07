@@ -1,0 +1,15 @@
+.NavBar{
+  width: 90%;
+  height: 70px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.logo{
+  width: 25px;
+}
+.cartLogo{
+  width: 25px;
+}
