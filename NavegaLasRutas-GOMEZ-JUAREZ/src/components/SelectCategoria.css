@@ -1,0 +1,7 @@
+.categorias > li > ul {
+    display: none;
+}
+
+.categorias > li:hover > ul {
+    display: block;
+}

@@ -1,4 +1,5 @@
 import { ItemCount } from "./ItemCount"
+import { Link } from "react-router-dom"
 
 export const ItemCard = ({producto}) => {
 
@@ -8,6 +9,8 @@ export const ItemCard = ({producto}) => {
             <p>Precio: {producto.precio}</p>
             <p>Categoria: {producto.categoria}</p>
             <ItemCount></ItemCount>
+            <Link to={`/productos/${producto.id}`}>Ver Detalle</Link>
         </div>
+        
     )
 }
