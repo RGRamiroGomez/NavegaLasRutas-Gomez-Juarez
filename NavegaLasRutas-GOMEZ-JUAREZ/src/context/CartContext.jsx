@@ -9,7 +9,8 @@ export const CartContextProvider = ({children}) => {
         setCart([...cart,prod])
     }
     const vaciarCart=()=>{
-        setCart([])
+        setCart(...[])
+        console.log("Entre a la funcion")
     }
     const removeFromCart=(id)=>{
         setCart(cart.filter((e)=>e.id!==id))

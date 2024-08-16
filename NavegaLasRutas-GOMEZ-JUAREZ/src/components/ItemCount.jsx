@@ -1,4 +1,4 @@
-import { useContext, useState } from "react"
+import { useContext, useState , useEffect } from "react"
 import { Button } from "./Button"
 import { CartContext } from "../context/CartContext"
 
@@ -6,6 +6,10 @@ export const ItemCount = ({prod}) => {
     const {cart,setCart,addToCart,vaciarCart,removeFromCart}=useContext(CartContext)
     const [vacio,setVacio]=useState(true)
     const [count, setCount] = useState(0)
+    useEffect(() => {
+        setVacio(true)
+        setCount(0)
+    }, [prod])
     const sumar = () => {
         setCount(count + 1)
         if(vacio){

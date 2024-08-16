@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { ItemCard } from "./ItemCard"
 import { getProductos } from "../mockend"
 import { useParams } from "react-router-dom"
-
+import { Link } from "react-router-dom"
 export const ItemConteiner = () => {
     const [items, setItems] = useState([])
     const [load,setLoad]=useState(true)
@@ -23,7 +23,8 @@ export const ItemConteiner = () => {
     }
     return (
         <div className='ItemConteiner'>
-            {items.map((e)=>(<ItemCard key={e.id} producto={e}></ItemCard>))}
+            {items.map((e)=>(<><ItemCard key={e.id} producto={e}></ItemCard>
+        <Link to={`/productos/${e.id}`} style={{textDecoration:'none'}}>Ver Detalle</Link></>))}
         </div>
     )
 }
