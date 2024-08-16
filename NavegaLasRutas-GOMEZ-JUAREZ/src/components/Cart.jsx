@@ -9,7 +9,7 @@ export const Cart = () => {
     return (
         <div className='cart'>
             {cart? cart.map((e)=><CartItem key={e.id} prod={e}/>) : <p>Aqui encontras los productos</p>}
-            {cart? <Button color="white" funcion={()=>vaciarCart()}>Vaciar Carrito</Button> : <Link to='/'>Ir a comprar!</Link>}
+            {cart.length ? <Button color="white" funcion={()=>vaciarCart()}>Vaciar Carrito</Button> : <Link to='/'>Ir a comprar!</Link>}
         </div>
     )
 }

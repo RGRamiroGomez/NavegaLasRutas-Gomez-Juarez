@@ -3,10 +3,12 @@ import { ItemCard } from "./ItemCard"
 import { getProductos } from "../mockend"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
+import _ from 'lodash'
 export const ItemConteiner = () => {
     const [items, setItems] = useState([])
     const [load,setLoad]=useState(true)
     const {categoria}=useParams() 
+    const shuffleItems=_.shuffle(items)
 
     useEffect(()=>{
         setLoad(true)
@@ -23,7 +25,7 @@ export const ItemConteiner = () => {
     }
     return (
         <div className='ItemConteiner'>
-            {items.map((e)=>(<><ItemCard key={e.id} producto={e}></ItemCard>
+            {shuffleItems.map((e)=>(<><ItemCard key={e.id} producto={e}></ItemCard>
         <Link to={`/productos/${e.id}`} style={{textDecoration:'none'}}>Ver Detalle</Link></>))}
         </div>
     )
