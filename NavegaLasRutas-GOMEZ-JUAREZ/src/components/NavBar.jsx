@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { SelectCategoria } from './SelectCategoria'
+import { CartWidget } from './CartWidget'
 
 export const NavBar = () => {
     return (
@@ -9,8 +10,7 @@ export const NavBar = () => {
                 <img src="/logoSprout.svg" alt="logo eGarden (brote)"  className='logo'/>
             </Link>
             <SelectCategoria></SelectCategoria>
-            
-            <Link to='/carrito'><img src="/logoCart.svg" alt="logo carrito de compra" className='cartLogo' style={{textDecoration:'none'}}/></Link>
+            <CartWidget/>
         </nav>
     )
 }

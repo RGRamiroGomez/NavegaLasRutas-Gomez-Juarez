@@ -26,7 +26,7 @@ export const ItemDetail = () => {
             <h2>{item.nombre}</h2>
             <p>{item.precio}</p>
             <p>{item.categoria}</p>
-            <ItemCount/>
+            <ItemCount prod={item}/>
             <Link to={`/productos/${item.id - 1}`} style={{textDecoration:'none'}}>Ver Anterios</Link>
             <Link to={`/productos/${item.id + 1}`} style={{textDecoration:'none'}}>Ver Siguiente</Link>
         </div>

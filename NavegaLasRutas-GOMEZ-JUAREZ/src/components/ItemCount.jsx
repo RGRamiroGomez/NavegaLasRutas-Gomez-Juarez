@@ -1,19 +1,41 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Button } from "./Button"
+import { CartContext } from "../context/CartContext"
 
-export const ItemCount = () => {
-    const [count, setCount] = useState(1)
+export const ItemCount = ({prod}) => {
+    const {cart,setCart,addToCart,vaciarCart,removeFromCart}=useContext(CartContext)
+    const [vacio,setVacio]=useState(true)
+    const [count, setCount] = useState(0)
     const sumar = () => {
         setCount(count + 1)
+        if(vacio){
+            setVacio(false)
+        }
     }
     const restar = ()=> {
-        setCount(count - 1)
+        if (count > 1) {
+            setCount(count - 1)
+        } else {
+            setCount(0)
+            setVacio(true)
+        }
     }
-    return (
-        <div className="itemCount">
+
+    const prodCant={...prod,cantidad:count}
+
+    if (vacio){
+        return(
+            <Button color="white" funcion={sumar}>+</Button>
+        )
+    }else{
+
+        return (
+            <div className="itemCount">
             <Button color="white" funcion={restar}>-</Button>
             <p>Count: {count}</p>
             <Button color="white" funcion={sumar}>+</Button>
+            <Button color="white" funcion={()=>addToCart(prodCant)}>Agregar al Carrito</Button>
         </div>
     )
+    }
 }
