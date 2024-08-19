@@ -5,7 +5,7 @@ import { CartWidget } from './CartWidget'
 export const NavBar = () => {
     return (
         <nav className='NavBar'>
-            <Link to="/" style={{textDecoration:'none'}}>
+            <Link to="/" style={{textDecoration:'none'}} className='link'>
                 <h1>eGarden</h1>
                 <img src="/logoSprout.svg" alt="logo eGarden (brote)"  className='logo'/>
             </Link>

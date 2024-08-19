@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import { createContext, useState } from 'react'
 
 export const CartContext=createContext()
 
@@ -9,8 +9,7 @@ export const CartContextProvider = ({children}) => {
         setCart([...cart,prod])
     }
     const vaciarCart=()=>{
-        setCart(...[])
-        console.log("Entre a la funcion")
+        setCart([])
     }
     const removeFromCart=(id)=>{
         setCart(cart.filter((e)=>e.id!==id))

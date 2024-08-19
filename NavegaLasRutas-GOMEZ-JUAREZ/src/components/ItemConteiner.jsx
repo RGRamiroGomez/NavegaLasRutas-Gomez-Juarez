@@ -26,7 +26,7 @@ export const ItemConteiner = () => {
     return (
         <div className='ItemConteiner'>
             {shuffleItems.map((e)=>(<><ItemCard key={e.id} producto={e}></ItemCard>
-        <Link to={`/productos/${e.id}`} style={{textDecoration:'none'}}>Ver Detalle</Link></>))}
+        <Link to={`/productos/${e.id}`} style={{textDecoration:'none'}} className="link">Ver Detalle</Link></>))}
         </div>
     )
 }

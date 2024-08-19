@@ -25,8 +25,8 @@ export const ItemDetail = () => {
     return (
         <div>
             <ItemCard producto={item}/>
-            <Link to={`/productos/${item.id - 1}`} style={{textDecoration:'none'}}>Ver Anterios</Link>
-            <Link to={`/productos/${item.id + 1}`} style={{textDecoration:'none'}}>Ver Siguiente</Link>
+            <Link to={`/productos/${item.id - 1}`} style={{textDecoration:'none'}} className='link'>Ver Anterios</Link>
+            <Link to={`/productos/${item.id + 1}`} style={{textDecoration:'none'}} className='link'>Ver Siguiente</Link>
         </div>
     )
 }

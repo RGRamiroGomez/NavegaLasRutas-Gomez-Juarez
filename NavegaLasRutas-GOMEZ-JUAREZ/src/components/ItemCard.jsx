@@ -1,5 +1,5 @@
 import { ItemCount } from "./ItemCount"
-import { Link } from "react-router-dom"
+
 
 export const ItemCard = ({producto}) => {
     

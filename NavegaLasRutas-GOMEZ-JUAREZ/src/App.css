@@ -13,6 +13,11 @@
 .cartLogo{
   width: 25px;
 }
-Link{
+.link {
   text-decoration: none !important;
+  color: #018273;
+}
+.link:hover{
+  color: brown;
+  font-size: larger;
 }
