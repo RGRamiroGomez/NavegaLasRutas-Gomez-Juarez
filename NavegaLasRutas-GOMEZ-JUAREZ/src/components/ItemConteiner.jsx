@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { ItemCard } from "./ItemCard"
-import { getProductos } from "../mockend"
 import { useParams } from "react-router-dom"
 import { Link } from "react-router-dom"
 import _ from 'lodash'

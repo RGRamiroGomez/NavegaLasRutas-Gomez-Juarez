@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { getProductoById } from '../mockend'
 import { useParams } from 'react-router-dom'
 import { ItemCount } from './ItemCount'
 import { Link } from 'react-router-dom'
