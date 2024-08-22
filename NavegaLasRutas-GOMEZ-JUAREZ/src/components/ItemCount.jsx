@@ -34,8 +34,8 @@ export const ItemCount = ({prod}) => {
     }else{
 
         return (
-            <div className="itemCount">
-            <Button color="white" funcion={restar}>-</Button>
+            <div className="flex flex-row gap-2">
+            <Button color="white" funcion={restar} className='w-10 bg-white border-textC border'>-</Button>
             <p>Count: {count}</p>
             <Button color="white" funcion={sumar}>+</Button>
             <Button color="white" funcion={()=>addToCart(prodCant)}>Agregar al Carrito</Button>

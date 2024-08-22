@@ -6,7 +6,7 @@ export const CartWidget = () => {
 
     return (
         <div className='cartWidget'>
-            <Link to='/carrito' className='link'><img src="/logoCart.svg" alt="logo carrito de compra" className='cartLogo' style={{textDecoration:'none'}}/></Link>
+            <Link to='/carrito' className='link'><img src="/logoCart.svg" alt="logo carrito de compra" className='w-10' style={{textDecoration:'none'}}/></Link>
             {cart.length ? <p>{cart.length}</p> : <p></p> }
         </div>
     )

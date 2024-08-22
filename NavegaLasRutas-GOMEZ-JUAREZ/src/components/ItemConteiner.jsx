@@ -52,9 +52,9 @@ export const ItemConteiner = () => {
         )
     }
     return (
-        <div className='ItemConteiner'>
+        <div className='grid grid-cols-4 gap-4'>
             {shuffleItems.map((e)=>(<><ItemCard key={e.id} producto={e}></ItemCard>
-        <Link to={`/productos/${e.id}`} style={{textDecoration:'none'}} className="link">Ver Detalle</Link></>))}
+        </>))}
         </div>
     )
 }

@@ -5,7 +5,7 @@ import { Button } from './Button'
 export const CartItem = ({prod}) => {
     const {removeFromCart}=useContext(CartContext)
     return (
-        <div className='cartItem'>
+        <div className='bg-bisque flex flex-col g-2 justify-between'>
             <h3>{prod.nombre}</h3>
             <p>{prod.precio}</p>
             <p>{prod.cantidad}</p>
