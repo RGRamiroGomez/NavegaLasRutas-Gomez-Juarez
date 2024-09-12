@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-modal';
 import { db } from '../firebase';
@@ -7,9 +7,9 @@ import { CartContext } from '../context/CartContext';
 import 'bootstrap/dist/css/bootstrap.min.css';
 export const CheckoutModal=()=>{
   const {cart}=useContext(CartContext)
-  const[writing,setWriting]=useState(false)
-  const[orderId,setId]=useState()
-  const[Checkout,setCheckout]=useState()
+  const [writing,setWriting]=useState(false)
+  const [orderId,setId]=useState()
+  const [Checkout,setCheckout]=useState()
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -23,9 +23,10 @@ export const CheckoutModal=()=>{
     const data={
       nombre: formData.get('nombre'),
       email: formData.get('email'),
-      telefono: formData.get('telefono')
+      telefono: formData.get('telefono'),
+      cart: cart
     }
-    setCheckout(cart,data)
+    setCheckout(data)
     try{
       const docRef=await addDoc(collection(db,'orders'),{Checkout})
       const id=docRef.id;
@@ -39,7 +40,7 @@ export const CheckoutModal=()=>{
     }
   }
   return (
-    <div className='flex w'> 
+    <div> 
       <Button variant="primary" onClick={handleShow}>
          Confirmar Pedido
       </Button>
