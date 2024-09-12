@@ -16,6 +16,7 @@ export const CheckoutModal=()=>{
   const handleShow = () => setShow(true);
  
   const handleOnSubmit=async (event)=>{
+    setId('')
     setWriting(true)
     event.preventDefault();
     const formData= new FormData(event.target)
@@ -42,8 +43,12 @@ export const CheckoutModal=()=>{
       <Button variant="primary" onClick={handleShow}>
          Confirmar Pedido
       </Button>
-      <Modal isOpen={show} onRequestClose={() => setIsOpen(false)}>
-        <h1>Ingrese sus datos</h1>
+      <Modal isOpen={show} onRequestClose={() => setShow(false)}>
+        {orderId ? (
+          <>
+            <p> Ingresamos su pedido con exito, el ID de su pedido es : {orderId} </p>
+          </>):
+        (<><h1>Ingrese sus datos</h1>
         {writing ?  
           <div>
             <p>Estamos tomando su pedido</p>
@@ -57,7 +62,7 @@ export const CheckoutModal=()=>{
             <input type="number" name="telefono" />
             
             <Button type="submit">Terminar Pedido</Button>
-          </form> }
+          </form> }</>)}
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
