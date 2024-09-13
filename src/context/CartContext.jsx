@@ -19,9 +19,9 @@ export const CartContextProvider = ({children}) => {
         setCart([])
     }
     const modificarCantidad=(prod)=>{
-        aModificar=cart.find((p)=>p.id === prod.id)
-        modificado={...aModificar, cantidad : prod.cantidad}
-        setCart(cart.map((p)=> (p.id === prod.id ? modificado : p)))
+        const aModificar=cart.find((p)=>p.id === prod.id)
+        const modificado={...aModificar, cantidad : prod.cantidad}
+        setCart(cart.map((p)=> p.id === prod.id ? modificado : p))
     }
     const removeFromCart=(id)=>{
         setCart(cart.filter((e)=>e.id!==id))

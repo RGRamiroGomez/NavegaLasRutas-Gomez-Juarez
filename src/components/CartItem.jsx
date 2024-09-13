@@ -13,7 +13,6 @@ export const CartItem = ({prod}) => {
         <div className='bg-bisque flex flex-col g-2 justify-between'>
             <h3>{productoLive.nombre}</h3>
             <p>{productoLive.precio}</p>
-            <p>{productoLive.cantidad}</p>
             <CartQuantity prod={prod}></CartQuantity>
             <Button color="white" funcion={()=>removeFromCart(prod.id)}> 🗑️</Button>
         </div>
