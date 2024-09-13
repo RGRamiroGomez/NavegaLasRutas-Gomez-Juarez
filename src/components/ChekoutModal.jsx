@@ -44,7 +44,7 @@ export const CheckoutModal=()=>{
       <Button variant="primary" onClick={handleShow}>
          Confirmar Pedido
       </Button>
-      <Modal isOpen={show} onRequestClose={() => setShow(false)}>
+      <Modal isOpen={show} onRequestClose={() => setShow(false)} className="flex flex-col w-96 bg-orange-200 border-textC p-1 border-2 rounded align-middle justify-center">
         {orderId ? (
           <>
             <p> Ingresamos su pedido con exito, el ID de su pedido es : {orderId} </p>
@@ -54,7 +54,7 @@ export const CheckoutModal=()=>{
           <div>
             <p>Estamos tomando su pedido</p>
           </div> : 
-          <form onSubmit={handleOnSubmit}>
+          <form onSubmit={handleOnSubmit} className='flex flex-col align-center justify-center'>
             <label htmlFor="nombre">Nombre</label>
             <input type="text" name="nombre" />
             <label htmlFor="email">Email</label>

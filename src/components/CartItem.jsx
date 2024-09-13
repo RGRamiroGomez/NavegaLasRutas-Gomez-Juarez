@@ -1,15 +1,21 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState , useEffect } from 'react'
 import { CartContext } from '../context/CartContext'
 import { Button } from './Button'
-
+import { CartQuantity } from './CartQuantity'
 export const CartItem = ({prod}) => {
-    const {removeFromCart}=useContext(CartContext)
+    const [productoLive,setProduct] = useState({})
+    const {removeFromCart, cart}=useContext(CartContext)
+    useEffect(() => {
+        const productoLive = cart.find((p) => p.id === prod.id);
+        setProduct(productoLive);
+      }, [cart, prod.id]);
     return (
         <div className='bg-bisque flex flex-col g-2 justify-between'>
-            <h3>{prod.nombre}</h3>
-            <p>{prod.precio}</p>
-            <p>{prod.cantidad}</p>
-            <Button color="white" funcion={()=>removeFromCart(prod.id)}>Quitar del carrito</Button>
+            <h3>{productoLive.nombre}</h3>
+            <p>{productoLive.precio}</p>
+            <p>{productoLive.cantidad}</p>
+            <CartQuantity prod={prod}></CartQuantity>
+            <Button color="white" funcion={()=>removeFromCart(prod.id)}> 🗑️</Button>
         </div>
     )
 }
